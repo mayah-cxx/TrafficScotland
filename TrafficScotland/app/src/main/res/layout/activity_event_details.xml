@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/txtDetailsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Traffic Event Details"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#172B4D"
+            android:paddingBottom="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ROAD NAME"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="#777777" />
+
+        <TextView
+            android:id="@+id/txtDetailRoadName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Road name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#172B4D"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EVENT TYPE"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="#777777" />
+
+        <TextView
+            android:id="@+id/txtDetailEventType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event type"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DESCRIPTION"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="#777777" />
+
+        <TextView
+            android:id="@+id/txtDetailDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Full event description"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="START TIME"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="#777777" />
+
+        <TextView
+            android:id="@+id/txtDetailStartTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start time"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EXPECTED END TIME"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="#777777" />
+
+        <TextView
+            android:id="@+id/txtDetailEndTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="End time"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DIRECTION"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="#777777" />
+
+        <TextView
+            android:id="@+id/txtDetailDirection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Direction"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DELAY INFORMATION"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="#777777" />
+
+        <TextView
+            android:id="@+id/txtDetailDelay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delay information"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOCATION COORDINATES"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="#777777" />
+
+        <TextView
+            android:id="@+id/txtDetailCoordinates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Coordinates"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:paddingBottom="20dp" />
+
+    </LinearLayout>
+
+</ScrollView>

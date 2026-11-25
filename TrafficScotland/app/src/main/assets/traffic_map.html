@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Traffic Scotland Map</title>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        .legend {
+            background: white;
+            padding: 10px;
+            line-height: 24px;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+        }
+
+        .incident-dot {
+            color: #d32f2f;
+            font-size: 20px;
+        }
+
+        .roadwork-dot {
+            color: #f57c00;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+
+    // Initialise the map centred on Scotland
+    var map = L.map('map').setView([56.4907, -4.2026], 7);
+
+    // Load OpenStreetMap tiles
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Layer groups for traffic events
+    var incidentLayer = L.layerGroup().addTo(map);
+    var roadworkLayer = L.layerGroup().addTo(map);
+
+    // Map legend
+    var legend = L.control({position: 'bottomright'});
+
+    legend.onAdd = function () {
+        var div = L.DomUtil.create('div', 'legend');
+
+        div.innerHTML =
+            '<span class="incident-dot">●</span> Traffic incidents<br>' +
+            '<span class="roadwork-dot">●</span> Roadworks';
+
+        return div;
+    };
+
+    legend.addTo(map);
+
+    // Receive traffic events from Android Java
+    function addTrafficEvent(event) {
+
+        var latitude = parseFloat(event.latitude);
+        var longitude = parseFloat(event.longitude);
+
+        if (!Number.isFinite(latitude) ||
+            !Number.isFinite(longitude) ||
+            latitude < -90 || latitude > 90 ||
+            longitude < -180 || longitude > 180) {
+            return;
+        }
+
+        var isRoadwork =
+            event.eventType.toLowerCase().includes('roadwork') ||
+            event.eventType.toLowerCase().includes('maintenance');
+
+        var marker = L.circleMarker(
+            [latitude, longitude],
+            {
+                radius: 9,
+                color: isRoadwork ? '#f57c00' : '#d32f2f',
+                fillColor: isRoadwork ? '#f57c00' : '#d32f2f',
+                fillOpacity: 0.85
+            }
+        );
+
+        marker.bindPopup(
+            '<b>' + escapeHtml(event.roadName) + '</b><br>' +
+            escapeHtml(event.eventType) + '<br>' +
+            escapeHtml(event.description)
+        );
+
+        if (isRoadwork) {
+            marker.addTo(roadworkLayer);
+        } else {
+            marker.addTo(incidentLayer);
+        }
+    }
+
+    // Prevent XML text from being interpreted as HTML
+    function escapeHtml(value) {
+        return String(value || '').replace(/[&<>"']/g, function (character) {
+            return {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            }[character];
+        });
+    }
+
+    // Allow Android to send the traffic events
+    function clearTrafficEvents() {
+        incidentLayer.clearLayers();
+        roadworkLayer.clearLayers();
+    }
+
+    function finishLoadingEvents() {
+        var allMarkers = [];
+
+        incidentLayer.eachLayer(function (layer) {
+            allMarkers.push(layer);
+        });
+
+        roadworkLayer.eachLayer(function (layer) {
+            allMarkers.push(layer);
+        });
+
+        if (allMarkers.length > 0) {
+            var group = L.featureGroup(allMarkers);
+            map.fitBounds(group.getBounds().pad(0.15));
+        }
+    }
+
+    // Layer controls
+    L.control.layers(null, {
+        "Traffic incidents": incidentLayer,
+        "Roadworks": roadworkLayer
+    }).addTo(map);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F6FA"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp">
+
+        <!-- App heading -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TRAFFIC SCOTLAND"
+            android:textColor="#173B50"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ROADWATCH  |  TRAFFIC INFORMATION"
+            android:textColor="#607D8B"
+            android:textSize="12sp"
+            android:layout_marginTop="5dp" />
+
+        <!-- Welcome banner -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#173B50"
+            android:padding="20dp"
+            android:layout_marginTop="24dp"
+            android:elevation="3dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="YOUR JOURNEY STARTS HERE"
+                android:textColor="#80D8E8"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Travel smarter.Travel safer."
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stay informed about incidents, roadworks and traffic conditions across Scotland."
+                android:textColor="#D5E8F0"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+
+        <!-- Navigation heading -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Explore traffic information"
+            android:textColor="#173B50"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="5dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose a service to get started"
+            android:textColor="#71818C"
+            android:textSize="13sp"
+            android:layout_marginBottom="14dp" />
+
+        <!-- Traffic incidents -->
+        <Button
+            android:id="@+id/btnIncidents"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:text="⚠️  Traffic Incidents"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:backgroundTint="#28566B"
+            android:textColor="#FFFFFF"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp" />
+
+        <!-- Roadworks -->
+        <Button
+            android:id="@+id/btnRoadworks"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:text="🚧  Current Roadworks"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:backgroundTint="#28566B"
+            android:textColor="#FFFFFF"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:layout_marginTop="12dp" />
+
+        <!-- Search roads -->
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:text="🔎  Search Roads"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:backgroundTint="#28566B"
+            android:textColor="#FFFFFF"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:layout_marginTop="12dp" />
+
+        <!-- Nearby events -->
+        <Button
+            android:id="@+id/btnNearby"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:text="📍  Nearby Events"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:backgroundTint="#28566B"
+            android:textColor="#FFFFFF"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:layout_marginTop="12dp" />
+
+        <!-- Traffic map -->
+        <Button
+            android:id="@+id/btnMap"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:text="🗺️  View Traffic Map"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:backgroundTint="#28566B"
+            android:textColor="#FFFFFF"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:layout_marginTop="12dp" />
+
+        <!-- Data status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#E4EDF3"
+            android:padding="16dp"
+            android:layout_marginTop="26dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TRAFFIC DATA STATUS"
+                android:textColor="#28566B"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtLastUpdated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Traffic information loaded from sample data"
+                android:textColor="#526B7A"
+                android:textSize="13sp"
+                android:gravity="start"
+                android:layout_marginTop="6dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

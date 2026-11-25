@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F7FA">
+
+    <TextView
+        android:id="@+id/txtListTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Traffic Incidents"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#172B4D"
+        android:padding="20dp"
+        android:background="#FFFFFF" />
+
+    <!-- Road search field -->
+    <EditText
+        android:id="@+id/edtSearchRoad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:hint="Search by road name (e.g. M8)"
+        android:inputType="text"
+        android:singleLine="true"
+        android:padding="14dp"
+        android:background="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/txtEmptyMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No traffic events available."
+        android:textSize="16sp"
+        android:textColor="#666666"
+        android:gravity="center"
+        android:padding="20dp"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/listTrafficEvents"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#DDDDDD"
+        android:dividerHeight="1dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:clipToPadding="false" />
+
+</LinearLayout>

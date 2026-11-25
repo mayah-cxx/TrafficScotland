@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F7FA">
+
+    <TextView
+        android:id="@+id/txtNearbyTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nearby Traffic Events"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#172B4D"
+        android:padding="20dp"
+        android:background="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/txtNearbyStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Finding your location..."
+        android:textSize="15sp"
+        android:textColor="#666666"
+        android:gravity="center"
+        android:padding="16dp" />
+
+    <ListView
+        android:id="@+id/listNearbyEvents"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#DDDDDD"
+        android:dividerHeight="1dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:clipToPadding="false"
+        android:visibility="gone" />
+
+</LinearLayout>

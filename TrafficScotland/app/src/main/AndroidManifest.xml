@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Traffic Scotland"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Omolola_Mayowa_S2139444">
+
+        <!-- Traffic event list screen -->
+        <activity
+            android:name=".TrafficDetailsActivity"
+            android:exported="false" /><activity
+        android:name=".NearbyEventsActivity"
+        android:exported="false" />
+
+        <activity
+            android:name=".TrafficListActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".SearchRoadActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".TrafficMapActivity"
+            android:exported="false" />
+
+        <!-- Main homepage -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>

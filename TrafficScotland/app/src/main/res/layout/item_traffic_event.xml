@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    android:background="@android:drawable/dialog_holo_light_frame">
+
+    <TextView
+        android:id="@+id/txtRoadName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Road name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#172B4D" />
+
+
+    <TextView
+        android:id="@+id/txtEventIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⚠️"
+        android:textSize="28sp"
+        android:layout_marginBottom="6dp" />
+
+    <TextView
+        android:id="@+id/txtEventType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Event type"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#D97706"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/txtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Event description"
+        android:textSize="14sp"
+        android:textColor="#444444"
+        android:layout_marginTop="6dp" />
+
+
+    <TextView
+        android:id="@+id/txtDelayBadge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delay information"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="#777777"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>
